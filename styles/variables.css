@@ -1,1 +1,14 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root{
+  --font-famile: 'Inter-Variable', 'Arial';
+  --second-famile: 'PressStart2P', sans-serif;
+  --font-weight-text: 465;
+  --font-weight-title: 785;
+  --text-color:#00cc14 ;
+  --bg-color: #000;
+  --border: 2px solid var(--text-color);
+  --bg-liner-color: #007f0c, #004306;
+  --hover-button-color: #00cc14;
+  --mix-blend-color: #00cc14;
+  --contоur-heart-color: #00cc14;
+  --sparks-heart-color: #f00;
+}
