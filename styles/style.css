@@ -138,7 +138,6 @@
 }
 
 .card-lable{
-  -webkit-text-stroke: 1px #000000;
   font-size: 14px;
   font-family: var(--second-famile);
   opacity: 0.5;
@@ -146,6 +145,14 @@
   right: 0;
   padding:25px;
   z-index: 2;
+  text-shadow: 1px -1px var(--bg-color) ;
+}
+
+@supports ((-webkit-text-stroke: 1px var(--text-lable-color)) or (text-stroke: 1px var(--text-lable-color))){
+  .card-lable{
+    -webkit-text-stroke: 1px var(--text-lable-color);
+    text-stroke: 1px var(--text-lable-color);
+  }
 }
 
 @media(width < 400px){
@@ -191,7 +198,7 @@
   display: flex;
   gap: 8px;
   justify-content: center;
-  background-color: #000000;
+  background-color: var(--bg-color);
   position: relative;
 }
 
@@ -256,7 +263,7 @@
 
 .card__icon-button{
   display: flex;
-  transition: border 0.3s ease;
+  transition: border 0.3s linear;
   border: 2px solid transparent;
   cursor: pointer;
 }
@@ -273,14 +280,14 @@
 .like-icon.is-liked{
   transition: fill 0.1s;
   animation-name: heart-active;
-  animation-timing-function: ease-in;
+  animation-timing-function: linear;
   animation-direction: alternate;
   animation-duration: 0.3s;
   animation-delay: 0.3s;
 }
 
 .contour{
-  transform: fill 0.3s 0.06s;
+  transform: fill 0.1s;
 }
 
 .like-icon.is-liked .contour {
@@ -290,7 +297,7 @@
 
 .main-body{
   fill: var(--bg-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s;
 }
 
 .card__icon-button:hover .main-body{
@@ -320,7 +327,7 @@
 }
 
 .card__icon-button:not(:hover) .core {
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .like-icon.is-liked .core {
@@ -341,6 +348,8 @@ dialog{
   min-width: 341px;
   max-width: 353px;
   padding: 30px;
+  text-transform: uppercase;
+  
 }
 
 .dialog::backdrop{
@@ -350,7 +359,18 @@ dialog{
 
 @media(width < 400px){
   .dialog{
-    padding: 40px;
+    width: 341px;
+    height: 191px;
+  }
+}
+
+.dialog-text{
+  line-height: 150%;
+}
+
+@media(width < 400px){
+  .dialog-text{
+    width: 198px;
   }
 }
 
@@ -359,6 +379,13 @@ dialog{
   position: relative;
   width: 100%;
   height: 39px;
+}
+
+@media(width < 400px){
+  .dialog-button{
+    width: 257px;
+    height: 38px;
+  }
 }
 
 .dialog-container{
@@ -371,6 +398,7 @@ dialog{
 .dialog .button__text{
   line-height: 150%;
   max-width: 234px;
+  text-transform: uppercase;
 }
 
 .svg-dialog{
@@ -409,4 +437,9 @@ dialog{
 
 .filter-sepia{
   filter: sepia(80%) saturate(158%);
+}
+
+.form-dialog{
+  display: flex;
+  justify-content: center;
 }

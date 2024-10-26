@@ -15,6 +15,7 @@
   --mix-blend-color: #00cc14;
   --contоur-heart-color: #00cc14;
   --sparks-heart-color: #f00;
+  --text-lable-color: var(--bg-color);
 }
 
 :root.theme-light{
@@ -28,6 +29,7 @@
   --mix-blend-color: #F5F5F5;
   --contоur-heart-color: #000;
   --sparks-heart-color: #f00;
+  --text-lable-color: var(--bg-color);
 }
 
 @media (prefers-color-scheme: light){
@@ -42,6 +44,7 @@
   --mix-blend-color: #F5F5F5;
   --contоur-heart-color: #000;
   --sparks-heart-color: #f00;
+  --text-lable-color: var(--bg-color);
   }
 }
 
@@ -57,5 +60,6 @@
     --mix-blend-color: #00cc14;
     --contоur-heart-color: #00cc14;
     --sparks-heart-color: #f00;
+    --text-lable-color: var(--bg-color);
   }
 }
