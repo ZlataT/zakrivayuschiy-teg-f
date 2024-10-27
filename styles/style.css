@@ -132,7 +132,7 @@
 }
 
 .card-title{
-  font-weight: var(--font-weight-title);
+  font-variation-settings: 'wght' var(--font-weight-title);
   padding: 3px 10px;
   font-size: 18px;
 }
@@ -169,7 +169,7 @@
 }
 
 .card-text{
-  font-weight: var(--font-weight-text);
+  font-variation-settings: 'wght' var(--font-weight-text);
   line-height: 117%;
   padding-inline: 25px;
   padding-block-start: 25px;
@@ -180,7 +180,13 @@
   grid-auto-flow: column;
   justify-content: end;
   margin: 24px;
-  gap: 12px;
+  gap: 5px;
+}
+
+@media (width < 400px){
+  .container-button{
+    gap: 5px;
+  }
 }
 
 .container-button .card__like-button{
@@ -192,7 +198,7 @@
 .save-button{
   width: 335px;
   min-height: 55px;
-  margin-block: 54px;
+  margin-block: 54px 100px;
   align-items: center;
   border: var(--border);
   display: flex;
@@ -200,6 +206,7 @@
   justify-content: center;
   background-color: var(--bg-color);
   position: relative;
+  
 }
 
 @media (width < 400px){
@@ -207,6 +214,7 @@
     flex-direction: column;
     width: 306px;
     height: 84px;
+    margin-block: 50px 100px;
   }
 }
 
@@ -218,6 +226,19 @@
   position: relative;
   z-index: 1;
 }
+
+@media (width < 400px){
+.save-button .save-floppy{
+  width: 28px;
+  height: 28px;
+}
+}
+
+@media (width < 400px){
+  .save-button .button__text{
+    padding-top: 2px;
+  }
+  }
 
 
 .button__text{
@@ -297,41 +318,47 @@
 
 .main-body{
   fill: var(--bg-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:hover .main-body{
   fill: var(--text-color);
+  transition: fill 0.3s 0.05s linear;
 }
 
 .card__icon-button:active .main-body{
   fill: var(--sparks-heart-color);
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--sparks-heart-color);
+  transition: fill 0.3s 0.05s linear;
 }
 
 
 .core{
   fill: var(--bg-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s 0.1s linear;
 }
 
 .card__icon-button:hover .core{
   fill: var(--text-color);
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:active .core{
   fill: var(--sparks-heart-color);
+  transition: fill 0.3s linear;
 }
 
 .card__icon-button:not(:hover) .core {
-  transition: fill 0.3s 0.03s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .core {
   fill: var(--sparks-heart-color);
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .sparks{
@@ -360,7 +387,6 @@ dialog{
 @media(width < 400px){
   .dialog{
     width: 341px;
-    height: 191px;
   }
 }
 
